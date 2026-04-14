@@ -32,12 +32,17 @@
   --transition-base:       250ms cubic-bezier(0.4,0,0.2,1);
   --hero-image:            url("https://images.unsplash.com/photo-1556911220-e1b5883e5989?w=1600&q=80&fit=crop");
   --about-image:           url("https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80&fit=crop");
-  /* Wave masks (white = visible gradient); paths match original SVGs */
+  /* Wave masks (white = visible); bottom + top paths partition the strip along the curve */
   --wave-m-b-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1080,0 360,80 0,40 Z'/%3E%3C/svg%3E");
   --wave-m-b-asym-a:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,60 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-asym-a:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,60 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
   --wave-m-b-asym-b:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-asym-b:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1800,0 -360,80 0,40 Z'/%3E%3C/svg%3E");
   --wave-m-b-double:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1350,20 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-double:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1530,60 900,0 1080,40 C1260,80 360,0 540,40 C720,80 -180,0 0,40 Z'/%3E%3C/svg%3E");
   --wave-m-t-mirrored:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+  --wave-m-b-tmirrored:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
 }
 
 *,
@@ -614,7 +619,7 @@ body.nav-open {
   background-clip: text;
 }
 
-/* —— Wave dividers (gradient: top = section above, bottom = section below; mask = curve) —— */
+/* —— Wave dividers (two solid layers + complementary masks = colour boundary follows the curve) —— */
 .wave-divider {
   position: relative;
   height: 80px;
@@ -623,16 +628,36 @@ body.nav-open {
   margin-bottom: -2px;
   --wave-top: var(--color-white);
   --wave-bottom: var(--color-white);
-  background: linear-gradient(to bottom, var(--wave-top), var(--wave-bottom));
+}
+
+.wave-divider::before,
+.wave-divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
-  -webkit-mask-position: bottom center;
-  mask-position: bottom center;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
-.wave-divider--top {
+.wave-divider::before {
+  z-index: 2;
+  background: var(--wave-top);
+}
+
+.wave-divider::after {
+  z-index: 1;
+  background: var(--wave-bottom);
+}
+
+.wave-divider--top::before,
+.wave-divider--top::after {
   -webkit-mask-position: top center;
   mask-position: top center;
 }
@@ -688,29 +713,55 @@ body.nav-open {
   --wave-bottom: var(--color-primary);
 }
 
-.wave-shape--b-gentle {
+.wave-shape--b-gentle::before {
+  -webkit-mask-image: var(--wave-m-t-gentle);
+  mask-image: var(--wave-m-t-gentle);
+}
+
+.wave-shape--b-gentle::after {
   -webkit-mask-image: var(--wave-m-b-gentle);
   mask-image: var(--wave-m-b-gentle);
 }
 
-.wave-shape--b-asym-a {
+.wave-shape--b-asym-a::before {
+  -webkit-mask-image: var(--wave-m-t-asym-a);
+  mask-image: var(--wave-m-t-asym-a);
+}
+
+.wave-shape--b-asym-a::after {
   -webkit-mask-image: var(--wave-m-b-asym-a);
   mask-image: var(--wave-m-b-asym-a);
 }
 
-.wave-shape--b-asym-b {
+.wave-shape--b-asym-b::before {
+  -webkit-mask-image: var(--wave-m-t-asym-b);
+  mask-image: var(--wave-m-t-asym-b);
+}
+
+.wave-shape--b-asym-b::after {
   -webkit-mask-image: var(--wave-m-b-asym-b);
   mask-image: var(--wave-m-b-asym-b);
 }
 
-.wave-shape--b-double {
+.wave-shape--b-double::before {
+  -webkit-mask-image: var(--wave-m-t-double);
+  mask-image: var(--wave-m-t-double);
+}
+
+.wave-shape--b-double::after {
   -webkit-mask-image: var(--wave-m-b-double);
   mask-image: var(--wave-m-b-double);
 }
 
-.wave-shape--t-mirrored {
+/* Upper wedge = section above; lower body = section below */
+.wave-shape--t-mirrored::before {
   -webkit-mask-image: var(--wave-m-t-mirrored);
   mask-image: var(--wave-m-t-mirrored);
+}
+
+.wave-shape--t-mirrored::after {
+  -webkit-mask-image: var(--wave-m-b-tmirrored);
+  mask-image: var(--wave-m-b-tmirrored);
 }
 
 /* —— Sections —— */
