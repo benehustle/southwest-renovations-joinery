@@ -2024,25 +2024,39 @@ body.nav-open {
 }
 
 /* —— Per-page hero positions —— */
+/* Home — construction worker on site */
 .page-home { --hero-image: url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop"); }
-.page-about { --hero-image: url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1600&q=80&fit=crop"); }
-.page-services { --hero-image: url("https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=1600&q=80&fit=crop"); }
-.page-contact { --hero-image: url("https://images.unsplash.com/photo-1521790797524-b2497295b8a0?w=1600&q=80&fit=crop"); }
-.page-privacy { --hero-image: url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80&fit=crop"); }
+/* About — carpenter working in workshop */
+.page-about { --hero-image: url("https://images.unsplash.com/photo-PQ1eGpP4RVM?w=1600&q=80&fit=crop"); }
+/* Services — people renovating house concept */
+.page-services { --hero-image: url("https://images.unsplash.com/photo-tBRZDm42nm8?w=1600&q=80&fit=crop"); }
+/* Contact — man working on house facade */
+.page-contact { --hero-image: url("https://images.unsplash.com/photo-qcF7O8c98js?w=1600&q=80&fit=crop"); }
+/* Privacy — construction worker (low-traffic, kept in construction theme) */
+.page-privacy { --hero-image: url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop"); }
 
+/* Service pages — confirmed relevant */
 .page-service--cabinetry { --hero-image: url("https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1600&q=80&fit=crop"); }
 .page-service--kitchen { --hero-image: url("https://images.unsplash.com/photo-1556911220-e1b5883e5989?w=1600&q=80&fit=crop"); }
 .page-service--bathroom { --hero-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=80&fit=crop"); }
 .page-service--whole-home { --hero-image: url("https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=80&fit=crop"); }
 .page-service--decks { --hero-image: url("https://images.unsplash.com/photo-1472220625704-91e1462799b2?w=1600&q=80&fit=crop"); }
 
+/* Suburb pages */
+/* Portland — architectural building (kept, confirmed relevant) */
 .page-suburb--portland { --hero-image: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&fit=crop"); }
-.page-suburb--narrawong { --hero-image: url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop"); }
+/* Narrawong — man working on house under construction (distinct from home hero) */
+.page-suburb--narrawong { --hero-image: url("https://images.unsplash.com/photo-xZOSkIEBe04?w=1600&q=80&fit=crop"); }
+/* Heywood — electrician/tools (kept, confirmed relevant) */
 .page-suburb--heywood { --hero-image: url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1600&q=80&fit=crop"); }
-.page-suburb--nelson { --hero-image: url("https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=1600&q=80&fit=crop"); }
-.page-suburb--tyrendarra { --hero-image: url("https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=1600&q=80&fit=crop"); }
-.page-suburb--bolwarra { --hero-image: url("https://images.unsplash.com/photo-1464146072230-91cabc968266?w=1600&q=80&fit=crop"); }
-.page-suburb--swvic { --hero-image: url("https://images.unsplash.com/photo-1465804575741-338df8554e02?w=1600&q=80&fit=crop"); }
+/* Nelson — man working on piece of wood */
+.page-suburb--nelson { --hero-image: url("https://images.unsplash.com/photo-LdCq8mErHa8?w=1600&q=80&fit=crop"); }
+/* Tyrendarra — carpenter assembling wooden cabinet */
+.page-suburb--tyrendarra { --hero-image: url("https://images.unsplash.com/photo-8Ncokl48Tu8?w=1600&q=80&fit=crop"); }
+/* Bolwarra — workers in workshop with stacked materials */
+.page-suburb--bolwarra { --hero-image: url("https://images.unsplash.com/photo-_MWk4aDZ6SQ?w=1600&q=80&fit=crop"); }
+/* South West Victoria — construction worker on new house */
+.page-suburb--swvic { --hero-image: url("https://images.unsplash.com/photo-hDBdkZBfGSM?w=1600&q=80&fit=crop"); }
 
 .page-about .hero__bg { background-position: 15% center; }
 .page-services .hero__bg { background-position: 70% center; }
