@@ -31,7 +31,7 @@ function initNav() {
   const burger = document.querySelector(".header__burger");
   const drawer = document.querySelector(".nav-drawer");
   const overlay = document.querySelector(".nav-overlay");
-  const drawerLinks = document.querySelectorAll(".nav-drawer__link, .nav-drawer__cta");
+  const drawerLinks = document.querySelectorAll(".nav-drawer__link[href], .nav-drawer__cta");
 
   function closeDrawer() {
     document.body.classList.remove("nav-open");
@@ -95,8 +95,16 @@ function setActiveNavLink() {
     file = "index.html";
   }
   const normalized = file;
+  const serviceFiles = new Set([
+    "services.html",
+    "custom-cabinetry-design-install.html",
+    "kitchen-renovations.html",
+    "bathroom-renovations.html",
+    "whole-home-renovations-extensions.html",
+    "decks-outdoor-areas.html",
+  ]);
 
-  document.querySelectorAll(".header__link, .nav-drawer__link").forEach((link) => {
+  document.querySelectorAll(".header__link, .header__sublink, .nav-drawer__link").forEach((link) => {
     const href = link.getAttribute("href");
     if (!href || href.startsWith("#")) return;
     const linkFile = href.split("/").pop();
@@ -104,6 +112,15 @@ function setActiveNavLink() {
       link.classList.add("is-active");
     }
   });
+
+  if (serviceFiles.has(normalized)) {
+    document.querySelectorAll("[data-nav-services]").forEach((link) => {
+      link.classList.add("is-active");
+    });
+    document.querySelectorAll(".nav-drawer__group").forEach((group) => {
+      group.setAttribute("open", "");
+    });
+  }
 }
 
 /* —— initSmoothScroll —— */

@@ -7,7 +7,16 @@
     <nav class="header__nav" aria-label="Primary">
       <a class="header__link" href="index.html">Home</a>
       <a class="header__link" href="about.html">About</a>
-      <a class="header__link" href="services.html">Services</a>
+      <div class="header__nav-item header__nav-item--has-dropdown">
+        <a class="header__link header__link--services" href="services.html" data-nav-services="desktop">Services</a>
+        <div class="header__dropdown" aria-label="Services submenu">
+          <a class="header__sublink" href="custom-cabinetry-design-install.html">Custom Cabinetry</a>
+          <a class="header__sublink" href="kitchen-renovations.html">Kitchen Renovations</a>
+          <a class="header__sublink" href="bathroom-renovations.html">Bathroom Renovations</a>
+          <a class="header__sublink" href="whole-home-renovations-extensions.html">Whole Home &amp; Extensions</a>
+          <a class="header__sublink" href="decks-outdoor-areas.html">Decks &amp; Outdoor Areas</a>
+        </div>
+      </div>
       <a class="header__link" href="contact.html">Contact</a>
     </nav>
     <a class="header__cta" href="tel:+61429610525">0429 610 525</a>
@@ -21,7 +30,17 @@
   <div class="nav-drawer__links">
     <a class="nav-drawer__link" href="index.html">Home</a>
     <a class="nav-drawer__link" href="about.html">About</a>
-    <a class="nav-drawer__link" href="services.html">Services</a>
+    <details class="nav-drawer__group">
+      <summary class="nav-drawer__link nav-drawer__summary">Services</summary>
+      <div class="nav-drawer__submenu">
+        <a class="nav-drawer__link nav-drawer__sublink" href="services.html" data-nav-services="mobile">All Services</a>
+        <a class="nav-drawer__link nav-drawer__sublink" href="custom-cabinetry-design-install.html">Custom Cabinetry</a>
+        <a class="nav-drawer__link nav-drawer__sublink" href="kitchen-renovations.html">Kitchen Renovations</a>
+        <a class="nav-drawer__link nav-drawer__sublink" href="bathroom-renovations.html">Bathroom Renovations</a>
+        <a class="nav-drawer__link nav-drawer__sublink" href="whole-home-renovations-extensions.html">Whole Home &amp; Extensions</a>
+        <a class="nav-drawer__link nav-drawer__sublink" href="decks-outdoor-areas.html">Decks &amp; Outdoor Areas</a>
+      </div>
+    </details>
     <a class="nav-drawer__link" href="contact.html">Contact</a>
     <a class="nav-drawer__cta" href="tel:+61429610525">Call 0429 610 525</a>
   </div>
