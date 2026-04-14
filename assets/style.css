@@ -33,16 +33,16 @@
   --hero-image:            url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop");
   --about-image:           url("https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80&fit=crop");
   /* Wave masks (white = visible); bottom + top paths partition the strip along the curve */
-  --wave-m-b-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
-  --wave-m-t-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1080,0 360,80 0,40 Z'/%3E%3C/svg%3E");
-  --wave-m-b-asym-a:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,60 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
-  --wave-m-t-asym-a:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,60 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
-  --wave-m-b-asym-b:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
-  --wave-m-t-asym-b:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1080,80 360,0 0,40 Z'/%3E%3C/svg%3E");
-  --wave-m-b-double:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1350,20 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
-  --wave-m-t-double:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1350,20 1260,80 1080,40 C900,0 720,80 540,40 C360,0 180,80 0,40 Z'/%3E%3C/svg%3E");
-  --wave-m-t-mirrored:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
-  --wave-m-b-tmirrored:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-b-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1080,0 360,80 0,40 Z'/%3E%3C/svg%3E");
+  --wave-m-b-asym-a:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,60 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-asym-a:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,60 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+  --wave-m-b-asym-b:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-asym-b:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1080,80 360,0 0,40 Z'/%3E%3C/svg%3E");
+  --wave-m-b-double:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1350,20 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-double:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1350,20 1260,80 1080,40 C900,0 720,80 540,40 C360,0 180,80 0,40 Z'/%3E%3C/svg%3E");
+  --wave-m-t-mirrored:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+  --wave-m-b-tmirrored:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
 }
 
 *,
