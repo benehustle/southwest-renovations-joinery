@@ -32,6 +32,12 @@
   --transition-base:       250ms cubic-bezier(0.4,0,0.2,1);
   --hero-image:            url("https://images.unsplash.com/photo-1556911220-e1b5883e5989?w=1600&q=80&fit=crop");
   --about-image:           url("https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80&fit=crop");
+  /* Wave masks (white = visible gradient); paths match original SVGs */
+  --wave-m-b-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-b-asym-a:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,0 C240,80 480,80 720,40 C960,0 1200,0 1440,60 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-b-asym-b:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-b-double:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1350,20 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
+  --wave-m-t-mirrored:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23fff' d='M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
 }
 
 *,
@@ -608,25 +614,27 @@ body.nav-open {
   background-clip: text;
 }
 
-/* —— Wave dividers —— */
+/* —— Wave dividers (gradient: top = section above, bottom = section below; mask = curve) —— */
 .wave-divider {
   position: relative;
   height: 80px;
   overflow: hidden;
   line-height: 0;
   margin-bottom: -2px;
+  --wave-top: var(--color-white);
+  --wave-bottom: var(--color-white);
+  background: linear-gradient(to bottom, var(--wave-top), var(--wave-bottom));
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: bottom center;
+  mask-position: bottom center;
 }
 
-.wave-divider svg {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.wave-divider--top svg {
-  top: 0;
-  bottom: auto;
+.wave-divider--top {
+  -webkit-mask-position: top center;
+  mask-position: top center;
 }
 
 @media (max-width: 640px) {
@@ -635,20 +643,74 @@ body.nav-open {
   }
 }
 
-.wave-divider--white {
-  color: var(--color-white);
+.wave-blend--dark-white {
+  --wave-top: var(--color-secondary);
+  --wave-bottom: var(--color-white);
 }
 
-.wave-divider--light {
-  color: var(--color-gray-50);
+.wave-blend--white-light {
+  --wave-top: var(--color-white);
+  --wave-bottom: var(--color-gray-50);
 }
 
-.wave-divider--dark {
-  color: var(--color-secondary);
+.wave-blend--light-dark {
+  --wave-top: var(--color-gray-50);
+  --wave-bottom: var(--color-secondary);
 }
 
-.wave-divider--primary {
-  color: var(--color-primary);
+.wave-blend--light-white {
+  --wave-top: var(--color-gray-50);
+  --wave-bottom: var(--color-white);
+}
+
+.wave-blend--light-light {
+  --wave-top: var(--color-gray-50);
+  --wave-bottom: var(--color-gray-50);
+}
+
+.wave-blend--white-primary {
+  --wave-top: var(--color-white);
+  --wave-bottom: var(--color-primary);
+}
+
+.wave-blend--primary-light {
+  --wave-top: var(--color-primary);
+  --wave-bottom: var(--color-gray-50);
+}
+
+.wave-blend--light-primary {
+  --wave-top: var(--color-gray-50);
+  --wave-bottom: var(--color-primary);
+}
+
+.wave-blend--dark-primary {
+  --wave-top: var(--color-secondary);
+  --wave-bottom: var(--color-primary);
+}
+
+.wave-shape--b-gentle {
+  -webkit-mask-image: var(--wave-m-b-gentle);
+  mask-image: var(--wave-m-b-gentle);
+}
+
+.wave-shape--b-asym-a {
+  -webkit-mask-image: var(--wave-m-b-asym-a);
+  mask-image: var(--wave-m-b-asym-a);
+}
+
+.wave-shape--b-asym-b {
+  -webkit-mask-image: var(--wave-m-b-asym-b);
+  mask-image: var(--wave-m-b-asym-b);
+}
+
+.wave-shape--b-double {
+  -webkit-mask-image: var(--wave-m-b-double);
+  mask-image: var(--wave-m-b-double);
+}
+
+.wave-shape--t-mirrored {
+  -webkit-mask-image: var(--wave-m-t-mirrored);
+  mask-image: var(--wave-m-t-mirrored);
 }
 
 /* —— Sections —— */
