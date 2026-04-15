@@ -30,8 +30,8 @@
   --shadow-md:             0 4px 16px rgba(0,0,0,0.08);
   --shadow-lg:             0 12px 40px rgba(0,0,0,0.10);
   --transition-base:       250ms cubic-bezier(0.4,0,0.2,1);
-  --hero-image:            url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop");
-  --about-image:           url("https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80&fit=crop");
+  --hero-image:            url("Southwest%20Renovations%20Joinery%20Images/Homepage%20Header.png");
+  --about-image:           url("Southwest%20Renovations%20Joinery%20Images/About%20us%20page%20Images.png");
   /* Wave masks (white = visible); bottom + top paths partition the strip along the curve */
   --wave-m-b-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z'/%3E%3C/svg%3E");
   --wave-m-t-gentle:       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,0 L1440,0 L1440,40 C1080,0 360,80 0,40 Z'/%3E%3C/svg%3E");
@@ -1245,6 +1245,10 @@ body.nav-open {
   margin-top: 2rem;
 }
 
+.service-photo-card + .service-photo-card {
+  margin-top: 1.5rem;
+}
+
 .service-photo-card figcaption {
   padding: 0.85rem 1rem;
   font-size: 0.875rem;
@@ -2024,39 +2028,26 @@ body.nav-open {
 }
 
 /* —— Per-page hero positions —— */
-/* Home — construction worker on site */
-.page-home { --hero-image: url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop"); }
-/* About — carpenter working in workshop */
-.page-about { --hero-image: url("https://images.unsplash.com/photo-PQ1eGpP4RVM?w=1600&q=80&fit=crop"); }
-/* Services — people renovating house concept */
-.page-services { --hero-image: url("https://images.unsplash.com/photo-tBRZDm42nm8?w=1600&q=80&fit=crop"); }
-/* Contact — man working on house facade */
-.page-contact { --hero-image: url("https://images.unsplash.com/photo-qcF7O8c98js?w=1600&q=80&fit=crop"); }
-/* Privacy — construction worker (low-traffic, kept in construction theme) */
-.page-privacy { --hero-image: url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop"); }
+.page-home { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Homepage%20Header.png"); }
+.page-about { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/About%20Header.png"); }
+.page-services { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Services%20Header.png"); }
+.page-contact { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Service%20page%20Image.png"); }
+.page-privacy { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Home%20page%20Images.png"); }
 
-/* Service pages — confirmed relevant */
-.page-service--cabinetry { --hero-image: url("https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1600&q=80&fit=crop"); }
-.page-service--kitchen { --hero-image: url("https://images.unsplash.com/photo-1556911220-e1b5883e5989?w=1600&q=80&fit=crop"); }
-.page-service--bathroom { --hero-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=80&fit=crop"); }
-.page-service--whole-home { --hero-image: url("https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=80&fit=crop"); }
-.page-service--decks { --hero-image: url("https://images.unsplash.com/photo-1472220625704-91e1462799b2?w=1600&q=80&fit=crop"); }
+.page-service--cabinetry { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Custom%20cabinetry%20header.png"); }
+.page-service--kitchen { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Kitchen%20renovations%20Header.png"); }
+.page-service--bathroom { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Bathroom%20renovations%20Header.png"); }
+.page-service--whole-home { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Whole-home%20renovations%20Header.png"); }
+.page-service--decks { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Decks%20Header.png"); }
 
-/* Suburb pages */
-/* Portland — architectural building (kept, confirmed relevant) */
-.page-suburb--portland { --hero-image: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&fit=crop"); }
-/* Narrawong — man working on house under construction (distinct from home hero) */
-.page-suburb--narrawong { --hero-image: url("https://images.unsplash.com/photo-xZOSkIEBe04?w=1600&q=80&fit=crop"); }
-/* Heywood — electrician/tools (kept, confirmed relevant) */
-.page-suburb--heywood { --hero-image: url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1600&q=80&fit=crop"); }
-/* Nelson — man working on piece of wood */
-.page-suburb--nelson { --hero-image: url("https://images.unsplash.com/photo-LdCq8mErHa8?w=1600&q=80&fit=crop"); }
-/* Tyrendarra — carpenter assembling wooden cabinet */
-.page-suburb--tyrendarra { --hero-image: url("https://images.unsplash.com/photo-8Ncokl48Tu8?w=1600&q=80&fit=crop"); }
-/* Bolwarra — workers in workshop with stacked materials */
-.page-suburb--bolwarra { --hero-image: url("https://images.unsplash.com/photo-_MWk4aDZ6SQ?w=1600&q=80&fit=crop"); }
-/* South West Victoria — construction worker on new house */
-.page-suburb--swvic { --hero-image: url("https://images.unsplash.com/photo-hDBdkZBfGSM?w=1600&q=80&fit=crop"); }
+/* Suburb pages — shared regional showcase */
+.page-suburb--portland,
+.page-suburb--narrawong,
+.page-suburb--heywood,
+.page-suburb--nelson,
+.page-suburb--tyrendarra,
+.page-suburb--bolwarra,
+.page-suburb--swvic { --hero-image: url("Southwest%20Renovations%20Joinery%20Images/Home%20page%20Images.png"); }
 
 .page-about .hero__bg { background-position: 15% center; }
 .page-services .hero__bg { background-position: 70% center; }
